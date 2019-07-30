@@ -1,0 +1,39 @@
+.header{
+    padding: 0.5em;
+    box-shadow: 0px 2px 5px 0px lightgray;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.header .logo{
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.header .title{
+    color: gray;
+    font-size: 1.4em;
+    padding-left: 0.3em;
+    font-weight: bold;
+}
+
+.header > .logo > img{
+    width: 50px;
+}
+
+.header .buttoner{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.header .buttoner a{
+    color: gray;
+    font-weight: bold;
+}
+
+.header .buttoner a:not(:first-child){
+    padding-left: 1em;
+}
