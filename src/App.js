@@ -6,6 +6,7 @@ import { BrowserRouter as Router, Route, Link, Switch } from "react-router-dom";
 
 //Components imports
 import Header from './components/header/header';
+import Signup from './views/signup/signup';
 
 //Views imports
 import Error404 from './views/error404/error404';
@@ -16,12 +17,13 @@ function App() {
     <Router>
       <div className="App">
         <Header/>
-      </div>
-
-      <Switch>
+      
+        <Switch>
         <Route path="/" exact component={Presentation}/>
+        <Route path="/register" exact component={Signup}/>
         <Route path="*" component={Error404}/>
       </Switch>
+      </div>
     </Router>
   );
 }

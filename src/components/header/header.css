@@ -1,5 +1,6 @@
 .header{
     padding: 0.5em;
+    background-color: #503c8b;
     box-shadow: 0px 2px 5px 0px lightgray;
     display: flex;
     align-items: center;
@@ -14,10 +15,15 @@
 }
 
 .header .title{
-    color: gray;
+    color:white;
     font-size: 1.4em;
     padding-left: 0.3em;
     font-weight: bold;
+    margin-top: 0.3em;
+}
+
+.header .title:hover{
+    color: #f75b5a;
 }
 
 .header > .logo > img{
@@ -30,8 +36,12 @@
 }
 
 .header .buttoner a{
-    color: gray;
+    color: white;
     font-weight: bold;
+}
+
+.header .buttoner a:hover{
+    color: #f75b5a;
 }
 
 .header .buttoner a:not(:first-child){

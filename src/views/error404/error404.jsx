@@ -9,7 +9,7 @@ function Error404(){
         <div className="error404">
             <p className="title">Oops!</p>
 
-            <img src="https://png.pngtree.com/element_origin_min_pic/17/08/09/900647a0b42fca2976857411bbb7d78a.jpg" alt=""/>
+            <img src="img/error404.png" alt="Bear"/>
 
             <p>It seems that you have lost.</p>
 

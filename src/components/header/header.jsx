@@ -13,8 +13,8 @@ class Header extends React.Component {
         return (
             <div className="header">
                 <Link className="logo" to="/">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/df/Google_Keep_icon.svg/245px-Google_Keep_icon.svg.png" alt="Logo" />
-                    <span className="title">My Keep</span>
+                    <img src="img/logo.png" alt="Logo" />
+                    <span className="title">Userapp</span>
                 </Link>
 
                 {/* If user is logged show Profile else Signs buttons */}

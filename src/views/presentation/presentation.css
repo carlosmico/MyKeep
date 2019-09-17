@@ -1,0 +1,16 @@
+.presentation{
+    height: 88.8vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1em;
+    background-image: url("https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/99278949-4e48-4ae9-aed3-81f82e2d7f9d/d1xp4n1-a2e4f619-ec59-4fa3-bca6-e9fef9e7b4eb.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcLzk5Mjc4OTQ5LTRlNDgtNGFlOS1hZWQzLTgxZjgyZTJkN2Y5ZFwvZDF4cDRuMS1hMmU0ZjYxOS1lYzU5LTRmYTMtYmNhNi1lOWZlZjllN2I0ZWIuanBnIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.w4HoAAV_35WPSUDCKqubgF_HT5RLNaH0B21fexofSVU");
+    color: white;
+}
+
+.presentation > h1{
+    padding: 1em;
+    margin: 1em;
+    background-color: #503c8bbf;
+    text-align: center;
+}

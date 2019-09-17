@@ -20,14 +20,14 @@
 
 .error404 img{
     height: 80vw;
-    width: 90vw;
-    max-width: 450px;
+    /* width: 90vw;
+    max-width: 450px; */
     max-height: 400px;
 }
 
 .error404 .button{
     all: unset;
-    background-color: #efaf27;
+    background-color: #f75b5a;
     color: white;
     padding: 1em;
     border-radius: 10px;
@@ -36,5 +36,5 @@
 }
 
 .error404 .button:hover{
-    background-color: #d89f24;
+    background-color: #f34e4e;
 }
