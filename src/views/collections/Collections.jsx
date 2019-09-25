@@ -6,6 +6,9 @@ import AXIOS from 'axios';
 //API
 import {API} from '../../config/config';
 
+//Navigation
+import Navigation from '../../components/navigation/navigation';
+
 //CSS
 import './Collections.css';
 import Axios from 'axios';
@@ -16,27 +19,25 @@ export default class Collections extends React.Component{
         super(props);
 
         this.state = {
-            collectionsUrl : `${API.baseUrl}/collections?page=100&client_id=${API.key}`,
+            collectionsUrl : `${API.baseUrl}/collections?client_id=${API.key}`,
             actualPage: 1,
             maxPage: 100
         }
 
-        this.getCollections();
+        this.getCollections = this.getCollections.bind(this);
     }
 
-    getCollections(){
-        Axios.get(this.state.collectionsUrl).then(
+    getCollections(url){
+        Axios.get(url).then(
             result => {
-                console.log(result);
-
                 let collectionsElement = [];
 
                 result.data.forEach(collection => {
                     collectionsElement.push(
                         <div className="collection">
-                            <p className="title">{collection.title}</p>
-
                             <img className="coverPhoto" src={collection.cover_photo.urls.small} alt=""/>
+
+                            <p className="title">{collection.title}</p>
                         </div>
                     );
                 });
@@ -54,11 +55,7 @@ export default class Collections extends React.Component{
             <div className="collectionsView">
                 <h1 className="title">COLLECTIONS</h1>
 
-                <div className="navigation">
-                    <i class="fas fa-arrow-left"></i>
-                    <span className="actualPage">{this.state.actualPage}</span>
-                    <i class="fas fa-arrow-right"></i>
-                </div>
+                <Navigation url={this.state.collectionsUrl} navAction={this.getCollections}/>
 
                 <div className="collections">
                     {this.state.collectionsElement}

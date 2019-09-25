@@ -1,0 +1,22 @@
+.navigation{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+span{
+    font-size: 1.3em;
+}
+
+.arrow{
+    padding: 0.5em;
+    margin: 0.5em;
+    background-color: #4f3c8a;
+    color: white;
+    border-radius: 0.5em;
+    cursor: pointer;
+}
+
+.arrow:hover{
+    color: #f75b5b;
+}
