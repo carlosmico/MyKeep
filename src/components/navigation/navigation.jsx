@@ -31,8 +31,6 @@ export default class Navigation extends React.Component{
     }
 
     first(){
-        console.log("sodkoaskodoas");
-        
         let actualPage = 1;
 
         this.setState({
