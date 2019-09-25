@@ -19,7 +19,7 @@ class Header extends React.Component {
 
                 <div className="buttoner">
                     <Link to="random">Random Photo</Link>
-                    <Link to="categories">Categories</Link>
+                    <Link to="collections">Collections</Link>
                 </div>
         
             </div>

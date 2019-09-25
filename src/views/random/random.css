@@ -1,0 +1,91 @@
+.sectionTitle{
+    text-align: center;
+    padding: 1em;
+    font-weight: 100;
+    /* color: #f75b5a; */
+}
+
+.wallpaperSection{
+    padding: 1em;
+    padding-top: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.wallpaper{
+    max-width: 90vw;
+    height: 70vh;
+    max-height: 700px;
+    border-radius: 5px;
+}
+
+.wallpaperInfo{
+    padding: 1em;
+    text-align: center;
+}
+
+.likesAndViews{
+    display: flex;
+    justify-content: center;
+}
+
+.lw{
+    padding-left: 1em;
+    padding-right: 1em;
+    display: flex;
+    align-items: center;
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+.lw i{
+    padding-right: 5px;
+}
+
+.downloads i{
+    color: dodgerblue;
+}
+
+.views i{
+    color: #503c8b;
+}
+
+.likes i{
+    color: #f75b5a;
+}
+
+.author{
+    padding-top: 1.5em;
+}
+
+.author a{
+    color: #503c8b;
+    font-weight: bold;
+}
+
+.powered{
+    padding-top: 3em;
+    font-size: 0.8em;
+}
+
+.downloadButton{
+    margin-top: 1.5em;
+    padding: 0.7em;
+    border-radius: 0.3em;
+    display: inline-flex;
+    background-color: #64dd17;
+    font-size: 1.1em;
+    font-weight: bold;
+}
+
+.downloadButton:hover{
+    background-color: #1faa00;
+}
+
+.downloadButton a{
+    color: white !important;
+}
+
+

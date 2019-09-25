@@ -1,0 +1,30 @@
+.collectionsView .title{
+    text-align: center;
+    padding: 1em;
+}
+
+.collections{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.collection{
+    padding: 1em;
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.collection .title{
+    text-align: center;
+    font-weight: bold;
+    padding: 0.5em;
+}
+
+.collection .coverPhoto{
+    width: 250px;
+    height: 280px;
+}
