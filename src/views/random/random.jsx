@@ -23,6 +23,7 @@ export default class Random extends React.Component{
         
         Axios.get(this.state.url).then(
             result => {
+                console.log(result)
                 this.setState(
                     {
                         wallpaper: result.data.urls.regular,
@@ -34,7 +35,9 @@ export default class Random extends React.Component{
                         authorProfile: result.data.user.links.html,
                         likes: result.data.likes,
                         downloads: result.data.downloads,
-                        views: result.data.views
+                        views: result.data.views,
+                        height: result.data.height,
+                        width: result.data.width
                     }
                 );
             }
@@ -48,16 +51,16 @@ export default class Random extends React.Component{
     render() {
         return(
             <div className="random">
-                <h1 className="sectionTitle">Random Photo</h1>
+                <h1 className="sectionTitle">Random Wallpaper</h1>
+
+                {
+                    this.state.error ? 
+                    <div class="alert alert-danger" role="alert">
+                        {this.state.error}
+                    </div> : ""
+                }
 
                 <div className="wallpaperSection">
-                    {
-                        this.state.error ? 
-                        <div class="alert alert-danger" role="alert">
-                            {this.state.error}
-                        </div> : ""
-                    }
-
                     <a href={this.state.wallpaperUrl} target="_blank">
                         <img className="wallpaper" src={this.state.wallpaper} alt={this.state.altDescription}/>
                     </a>
@@ -78,6 +81,15 @@ export default class Random extends React.Component{
                                 <i className="fas fa-eye"></i>
                                 {this.state.views}
                             </span>
+                        </div>
+
+                        <div className="dimensions">
+                            Dimensions (px): 
+
+                            <div className="data">
+                                <i class="fas fa-text-height"><span>{this.state.height}</span></i>
+                                <i class="fas fa-text-width"><span>{this.state.width}</span></i>
+                            </div>
                         </div>
 
                         <p className="author">Author: <a href={this.state.authorProfile} target="_blank">{this.state.author}</a></p>

@@ -18,7 +18,7 @@ class Header extends React.Component {
                 </Link>
 
                 <div className="buttoner">
-                    <Link to="random">Random Photo</Link>
+                    <Link to="random">Random Wallpaper</Link>
                     <Link to="collections">Collections</Link>
                 </div>
         
