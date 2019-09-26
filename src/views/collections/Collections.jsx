@@ -47,7 +47,11 @@ export default class Collections extends React.Component{
                     collectionsElement: collectionsElement
                 });
             }
-        ).catch(console.log);
+        ).catch(
+            error => this.setState({
+                error: error.response.data
+            })
+        );
     }
 
     render(){
@@ -56,6 +60,13 @@ export default class Collections extends React.Component{
                 <h1 className="title">COLLECTIONS</h1>
 
                 <Navigation url={this.state.collectionsUrl} navAction={this.getCollections}/>
+
+                {
+                    this.state.error ? 
+                    <div class="alert alert-danger" role="alert">
+                        {this.state.error}
+                    </div> : ""
+                }
 
                 <div className="collections">
                     {this.state.collectionsElement}

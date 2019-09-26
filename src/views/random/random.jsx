@@ -23,7 +23,6 @@ export default class Random extends React.Component{
         
         Axios.get(this.state.url).then(
             result => {
-
                 this.setState(
                     {
                         wallpaper: result.data.urls.regular,
@@ -52,9 +51,12 @@ export default class Random extends React.Component{
                 <h1 className="sectionTitle">Random Photo</h1>
 
                 <div className="wallpaperSection">
-                    <div class="alert alert-danger" role="alert">
-                        {this.state.error}
-                    </div>
+                    {
+                        this.state.error ? 
+                        <div class="alert alert-danger" role="alert">
+                            {this.state.error}
+                        </div> : ""
+                    }
 
                     <a href={this.state.wallpaperUrl} target="_blank">
                         <img className="wallpaper" src={this.state.wallpaper} alt={this.state.altDescription}/>
