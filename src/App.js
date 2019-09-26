@@ -6,6 +6,7 @@ import { BrowserRouter as Router, Route, Link, Switch } from "react-router-dom";
 
 //Components imports
 import Header from './components/header/header';
+import Footer from './components/footer/footer';
 
 //Views imports
 import Error404 from './views/error404/error404';
@@ -20,11 +21,13 @@ function App() {
         <Header/>
       
         <Switch>
-        <Route path="/" exact component={Presentation}/>
-        <Route path="/random" exact component={Random}/>
-        <Route path="/collections" exact component={Collections}/>
-        <Route path="*" component={Error404}/>
-      </Switch>
+          <Route path="/" exact component={Presentation}/>
+          <Route path="/random" exact component={Random}/>
+          <Route path="/collections" exact component={Collections}/>
+          <Route path="*" component={Error404}/>
+        </Switch>
+
+        <Footer/>
       </div>
     </Router>
   );

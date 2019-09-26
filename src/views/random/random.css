@@ -1,3 +1,10 @@
+.random{
+    min-height: 87vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
 .sectionTitle{
     text-align: center;
     padding: 1em;
@@ -10,7 +17,7 @@
     padding-top: 0;
     display: flex;
     /* flex-direction: column; */
-    justify-content: center;
+    justify-content: space-evenly;
     align-items: stretch;
 }
 
@@ -19,6 +26,17 @@
     height: 70vh;
     max-height: 700px;
     border-radius: 5px;
+}
+
+.wallpaperInfo{
+    /* background-color: #f1f1f1a1; */
+    padding: 1em;
+    border-radius: 5px;
+    min-height: 100%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
 }
 
 @media(max-width: 800px){
@@ -31,18 +49,10 @@
         max-width: 400px;
         width: 85vw;
     }
-}
 
-.wallpaperInfo{
-    background-color: #f1f1f1a1;
-    margin-left: 1em;
-    padding: 1em;
-    border-radius: 5px;
-    min-height: 100%;
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
+    .wallpaperInfo{
+        margin-top: 1em;
+    }
 }
 
 .likesAndViews{
@@ -50,6 +60,8 @@
     justify-content: center;
     flex-wrap: wrap;
     padding: 1em;
+    border: 2px solid lightgrey;
+    border-radius: 50px;
 }
 
 .lw{
@@ -114,11 +126,6 @@
     font-weight: bold;
 }
 
-.powered{
-    padding-top: 3em;
-    font-size: 0.8em;
-}
-
 .downloadButton{
     margin-top: 1.5em;
     padding: 0.7em;
@@ -135,6 +142,7 @@
 
 .downloadButton a{
     color: white !important;
+    text-align: center;
 }
 
 

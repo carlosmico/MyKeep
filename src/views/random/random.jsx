@@ -95,8 +95,6 @@ export default class Random extends React.Component{
                         <p className="author">Author: <a href={this.state.authorProfile} target="_blank">{this.state.author}</a></p>
 
                         <p className="downloadButton"><a href={this.state.downloadUrl} target="_blank">Download</a></p>
-
-                        <p className="powered">Powered by: <a href="https://unsplash.com/" target="_blank">Unsplash</a></p>
                     </div>
                 </div>
             </div>
