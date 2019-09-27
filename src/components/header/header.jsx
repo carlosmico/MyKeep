@@ -24,10 +24,10 @@ class Header extends React.Component {
                 <div className="collapse navbar-collapse" id="navbarNav">
                     <ul className="navbar-nav">
                         <li className="nav-item active">
-                            <Link className="nav-link" to="random">Random Wallpaper</Link>
+                            <Link className="nav-link" to="/random">Random Wallpaper</Link>
                         </li>
                         <li className="nav-item active">
-                            <Link className="nav-link" to="collections">Collections</Link>
+                            <Link className="nav-link" to="/collections">Collections</Link>
                         </li>
                     </ul>
                 </div>

@@ -13,6 +13,7 @@ import Error404 from './views/error404/error404';
 import Presentation from './views/presentation/presentation';
 import Random from './views/random/random';
 import Collections from './views/collections/Collections'
+import Collection from './components/collection/collection'
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
           <Route path="/" exact component={Presentation}/>
           <Route path="/random" exact component={Random}/>
           <Route path="/collections" exact component={Collections}/>
+          <Route path="/collection/:id" exact component={Collection}/>
           <Route path="*" component={Error404}/>
         </Switch>
 

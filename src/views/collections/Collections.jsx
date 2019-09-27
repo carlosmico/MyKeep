@@ -6,8 +6,9 @@ import AXIOS from 'axios';
 //API
 import {API} from '../../config/config';
 
-//Navigation
+//Components
 import Navigation from '../../components/navigation/navigation';
+import {Link} from 'react-router-dom';
 
 //CSS
 import './Collections.css';
@@ -32,13 +33,18 @@ export default class Collections extends React.Component{
             result => {
                 let collectionsElement = [];
 
+                console.log(result.data[0]);
+
                 result.data.forEach(collection => {
                     collectionsElement.push(
-                        <div className="collection">
+                        <Link className="collection" to={`/collection/${collection.id}`}>
                             <img className="coverPhoto" src={collection.cover_photo.urls.small} alt=""/>
 
-                            <p className="title">{collection.title}</p>
-                        </div>
+                            <div className="collectionData">
+                                <span className="title">{collection.title}</span>
+                                <span><i class="fas fa-camera"></i>{collection.total_photos}</span>
+                            </div>
+                        </Link>
                     );
                 });
 
@@ -71,6 +77,8 @@ export default class Collections extends React.Component{
                 <div className="collections">
                     {this.state.collectionsElement}
                 </div>
+
+                <Navigation url={this.state.collectionsUrl} navAction={this.getCollections}/>
             </div>
         );
     }

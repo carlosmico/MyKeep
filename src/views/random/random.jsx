@@ -55,6 +55,8 @@ export default class Random extends React.Component {
     }
 
     firstCharToUpperCase(word){
+        if(!word) return "Wallpaper";
+
         let firstChar = word[0];
 
         firstChar = firstChar.toUpperCase();

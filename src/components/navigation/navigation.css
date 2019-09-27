@@ -2,17 +2,20 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    padding-bottom: 1em;
 }
 
 .navigation span{
     font-size: 1.3em;
+    padding-left: 1em;
+    padding-right: 1em;
 }
 
 .arrow{
     padding: 0.5em;
     margin: 0.5em;
-    background-color: #4f3c8a;
-    color: white;
+    background-color: #e6e6e6;
+    color: #9b58b6;
     border-radius: 0.5em;
     cursor: pointer;
 }

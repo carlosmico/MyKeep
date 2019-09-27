@@ -1,0 +1,15 @@
+.photos{
+    padding: 1em;
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.photos .photo{
+    height: 250px;
+    width: 250px;
+    margin: 1em;
+    padding: 1em;
+    border-radius: 50%;
+}
