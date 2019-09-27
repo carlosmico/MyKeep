@@ -36,6 +36,7 @@
     text-align: center;
     display: flex;
     flex-direction: column;
+    align-items: center;
     justify-content: space-evenly;
 }
 
@@ -55,6 +56,11 @@
     }
 }
 
+.description{
+    font-size: 1.3em;
+    font-weight: bold;
+}
+
 .likesAndViews{
     display: flex;
     justify-content: center;
@@ -62,6 +68,19 @@
     padding: 1em;
     border: 2px solid lightgrey;
     border-radius: 50px;
+}
+
+@media(max-width: 425px){
+    .likesAndViews{
+        border: none;
+        border-radius: none;
+    }
+}
+
+@media(max-width: 400px){
+    .likesAndViews{
+        flex-direction: column;
+    }
 }
 
 .lw{
@@ -129,11 +148,14 @@
 .downloadButton{
     margin-top: 1.5em;
     padding: 0.7em;
+    padding-left: 2em;
+    padding-right: 2em;
     border-radius: 0.3em;
     display: inline-flex;
     background-color: #64dd17;
     font-size: 1.1em;
     font-weight: bold;
+    color: white;
 }
 
 .downloadButton:hover{

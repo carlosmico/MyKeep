@@ -1,10 +1,22 @@
 .footer{
     background-color: #dcdcdcb8;
     display: flex;
-    align-items: flex-end;
-    justify-content: center;
-    height: 60px;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-evenly;
+    min-height: 60px;
 }
 
-.footer p{
+.footer span{
+    padding: 10px;
+}
+
+.footer .W{
+    font-size: 2em;
+    color: #9b59b6;
+}
+
+.footer .P{
+    font-size: 2em;
+    color: #f75b5a;
 }

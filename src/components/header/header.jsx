@@ -14,7 +14,7 @@ class Header extends React.Component {
             <nav className="navbar navbar-expand-lg navbar-light bg-light">
                 <Link className="navbar-brand logo" to="/">
                     <img src="img/logo.png" alt="Logo" />
-                    <span className="title">WPW</span>
+                    <span className="title"><span className="W">W</span><span className="P">P</span><span className="W">W</span></span>
                 </Link>
                 
                 <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
