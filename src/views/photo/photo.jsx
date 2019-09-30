@@ -1,24 +1,31 @@
 import React from 'react';
+import {NavLink} from 'react-router-dom';
 import Axios from 'axios';
 
 //API CONFIGURATION
 import { API } from '../../config/config';
 
 //CSS
-import "./random.css";
+import "./photo.css";
 
-export default class Random extends React.Component {
+export default class Photo extends React.Component {
     constructor(props) {
         super(props);
 
-        this.state = {
-            url: `${API.baseUrl}/photos/random?client_id=${API.key}`
-        };
+        if (props.match.params.action === "random") {
+            this.state = {
+                url: `${API.baseUrl}/photos/random?client_id=${API.key}`
+            };
+        } else {
+            this.state = {
+                url: `${API.baseUrl}/photos/${props.match.params.action}?client_id=${API.key}`
+            };
+        }
 
-        this.getRandomWallpaper();
+        this.getWallpaper();
     }
 
-    getRandomWallpaper() {
+    getWallpaper() {
         Axios.get(`${API.baseUrl}/collections?client_id=${API.key}`).then(console.log).catch(console.log);
 
         Axios.get(this.state.url).then(
@@ -26,7 +33,7 @@ export default class Random extends React.Component {
                 console.log(result);
 
                 let description = this.firstCharToUpperCase(result.data.alt_description);
-                
+
                 this.setState(
                     {
                         wallpaper: result.data.urls.regular,
@@ -54,21 +61,21 @@ export default class Random extends React.Component {
         });
     }
 
-    firstCharToUpperCase(word){
-        if(!word) return "Wallpaper";
+    firstCharToUpperCase(word) {
+        if (!word) return "Wallpaper";
 
         let firstChar = word[0];
 
         firstChar = firstChar.toUpperCase();
 
-        let wordUppered = firstChar + word.slice(1,word.length);
+        let wordUppered = firstChar + word.slice(1, word.length);
 
         return wordUppered;
     }
 
     render() {
         return (
-            <div className="random">
+            <div className="photoView">
                 <h1 className="sectionTitle">Random Wallpaper</h1>
 
                 {
@@ -112,9 +119,9 @@ export default class Random extends React.Component {
                             </div>
                         </div>
 
-                        <p className="author">Author: <a href={this.state.authorProfile} target="_blank">{this.state.author}</a></p>
+                        <p className="author">Author: <NavLink to={this.state.authorProfile} target="_blank">{this.state.author}</NavLink></p>
 
-                        <a className="downloadButton" href={this.state.wallpaper}download>Download</a>
+                        <a className="downloadButton" href={this.state.wallpaper} target="_blank" download>Download</a>
                     </div>
                 </div>
             </div>

@@ -1,4 +1,5 @@
 import React from 'react';
+import {NavLink} from 'react-router-dom';
 import Axios from 'axios';
 
 //ApiConfigurtaion
@@ -9,10 +10,14 @@ import './collection.css';
 export default class Collection extends React.Component{
     constructor(props){
         super(props);
+
+        console.log(props);
         
         this.state = {
-            collectionId: props.location.pathname[props.location.pathname.length - 1]
+            collectionId: props.location.pathname.substring(12, props.location.pathname.length)
         }
+
+        console.log(this.state);
 
         this.getInfo();
     }
@@ -21,6 +26,16 @@ export default class Collection extends React.Component{
         Axios.get(`${API.baseUrl}/collections/${this.state.collectionId}?client_id=${API.key}`).then(
             result => {
                 console.log(result);
+
+                this.setState({
+                    title: result.data.title,
+                    description: result.data.description,
+                    totalPhotos: result.data.total_photos,
+                    tags: result.data.tags,
+                    unsplashUrl: result.data.links["html"]
+                });
+
+                console.log(this.state)
 
                 this.getPhotos();
             }
@@ -36,7 +51,15 @@ export default class Collection extends React.Component{
                 console.log(photo);
 
                 photos.push(
-                    <img className="photo" src={photo.urls.regular} alt="11"/>
+                    <NavLink to={`/photo/${photo.id}`} className="photoContainer" onMouseOver={this.showMoreInfo} onMouseLeave={this.hideMoreInfo}>
+                        <div className="photo moreInfo hide">
+                            <div className="moreInfoContent">
+                                <p>View photo</p>
+                                <p><i class="fas fa-plus-circle"></i></p>
+                            </div>
+                        </div>
+                        <img className="photo" src={photo.urls.regular} alt="11"/>
+                    </NavLink>
                 );
             });
 
@@ -46,12 +69,40 @@ export default class Collection extends React.Component{
         }).catch(error => console.log(error));
     }
 
+    showMoreInfo(event){
+        let moreInfo = event.target.querySelector('.moreInfo');
+        
+        if(moreInfo){
+            moreInfo.classList.remove("hide");
+            moreInfo.classList.add("show");
+        }
+    }
+
+    hideMoreInfo(event){
+        let moreInfo = event.target.querySelector('.moreInfo');
+        
+        if(moreInfo){
+            moreInfo.classList.remove("show");
+            moreInfo.classList.add("hide");
+        }
+    }
+
     render(){
         return(
             <div className="collection">
+                <div className="collectionInfo">
+                    <h1>{this.state.title}</h1>
+
+                    <p className="description">"{this.state.description}"</p>
+
+                    <p>Total photos: {this.state.totalPhotos}</p>
+                </div>
+
                 <div className="photos">
                     {this.state.photos}
                 </div>
+
+                <p>See the collection on <a href={this.state.unsplashUrl} target="_blank">Unsplash</a></p>
             </div>
         );
     }

@@ -24,7 +24,7 @@ class Header extends React.Component {
                 <div className="collapse navbar-collapse" id="navbarNav">
                     <ul className="navbar-nav">
                         <li className="nav-item active">
-                            <Link className="nav-link" to="/random">Random Wallpaper</Link>
+                            <Link className="nav-link" to="/photo/random">Random Wallpaper</Link>
                         </li>
                         <li className="nav-item active">
                             <Link className="nav-link" to="/collections">Collections</Link>
@@ -32,18 +32,6 @@ class Header extends React.Component {
                     </ul>
                 </div>
             </nav>
-
-            // <div className="header">
-            //     <Link className="logo" to="/">
-            //         <img src="img/logo.png" alt="Logo" />
-            //         <span className="title">WPW</span>
-            //     </Link>
-
-            //     <div className="buttoner">
-            //         <Link to="random">Random Wallpaper</Link>
-            //         <Link to="collections">Collections</Link>
-            //     </div>
-            // </div>
         );
     }
 }
