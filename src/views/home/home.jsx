@@ -12,11 +12,12 @@ export default class Home extends React.Component {
     constructor(props) {
         super(props);
 
-        const lastPhotosUrl = `${API.baseUrl}/photos?client_id=${API.key}&per_page=100`;
+        const lastPhotosUrl = `${API.baseUrl}/photos?client_id=${API.key}&per_page=50`;
 
         const navigation = <Navigation url={lastPhotosUrl} navAction={this.searchPhotos} maxPage={100}/>;
 
         this.state = {
+            search: true,
             navigation: navigation
         }
 
@@ -27,7 +28,7 @@ export default class Home extends React.Component {
         if (event.key === "Enter") {
             let query = event.target.value;
 
-            let url = `${API.baseUrl}/search/photos?client_id=${API.key}&query=${query}&per_page=100`;
+            let url = `${API.baseUrl}/search/photos?client_id=${API.key}&query=${query}&per_page=50`;
 
             let navigation = <Navigation url={url} navAction={this.searchPhotos} maxPage={100}/>;
 
@@ -35,6 +36,7 @@ export default class Home extends React.Component {
                 navigation: null
             }, ()=>{
                 this.setState({
+                    search: true,
                     url: url,
                     navigation: navigation
                 }, );
@@ -42,21 +44,35 @@ export default class Home extends React.Component {
         }
     }
 
-    searchPhotos(url) {
+    searchPhotos = (url) => {
         Axios.get(url).then(
             result => {
                 let photos = [];
 
-                console.log(result);
+                console.log(result)
 
-                result.data.results.forEach(photo => {
-                    photos.push(
-                        <NavLink className="photo" to={`/photo/${photo.id}`} style={{'backgroundImage': `url(${photo.urls.regular})`}} key={photo.id}>
-                        </NavLink >
-                    );
-                });
+                if(result.data.results){
+                    result.data.results.forEach(photo => {
+                        console.log(photo)
+                        photos.push(
+                            <NavLink className="photo" to={`/photo/${photo.id}`} style={{'backgroundImage': `url(${photo.urls.regular})`}} key={photo.id}>
+                            </NavLink >
+                        );
+                    });
+                }else{
+                    result.data.forEach(photo => {
+                        console.log(photo)
+                        photos.push(
+                            <NavLink className="photo" to={`/photo/${photo.id}`} style={{'backgroundImage': `url(${photo.urls.regular})`}} key={photo.id}>
+                            </NavLink >
+                        );
+                    });
+                }
+
+                console.log(photos)
 
                 this.setState({
+                    search: true,
                     results: result.data.total,
                     pages: result.data.total_pages,
                     photos: photos
@@ -70,17 +86,16 @@ export default class Home extends React.Component {
     render() {
         return (
             <div className="home">
-                {console.log(1)}
                 <div className="searchBar">
+                    <h1><span className="W">W</span><span className="P">P</span><span className="W">W</span></h1>
+                    <h2>You just have to write and we find your wallpaper.</h2>
                     <input type="text" className=" searchBar" placeholder="Discover new photos..." onKeyUp={this.handleChange.bind(this)} />
                 </div>
 
-                {true ?
+                {this.state.search ?
                     <div className="resultsInfo">
-                        
-                        {/* <Navigation url={this.state.url} navAction={this.searchPhotos} maxPage={this.state.pages} /> */}
-                        <p>Results found: {this.state.results}</p>
-                        {this.state.navigation}
+                        {/* {this.state.navigation} */}
+                        {/* <p>Results found: {this.state.results}</p> */}
                         <div className="photosResult">
                             {this.state.photos}
                         </div>

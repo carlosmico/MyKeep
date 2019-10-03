@@ -14,10 +14,12 @@ export default class Photo extends React.Component {
 
         if (props.match.params.action === "random") {
             this.state = {
+                title: 'Random Wallpaper',
                 url: `${API.baseUrl}/photos/random?client_id=${API.key}`
             };
         } else {
             this.state = {
+                title: 'Wallpaper',
                 url: `${API.baseUrl}/photos/${props.match.params.action}?client_id=${API.key}`
             };
         }
@@ -76,7 +78,7 @@ export default class Photo extends React.Component {
     render() {
         return (
             <div className="photoView">
-                <h1 className="sectionTitle">Random Wallpaper</h1>
+                {/* <h1 className="sectionTitle">{this.state.title}</h1> */}
 
                 {
                     this.state.error ?

@@ -1,18 +1,51 @@
 .home{
-    padding: 1em;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
+.home .searchBar{
+    height: 400px;
+    width: 100vw;
+    background-image: url("http://www.cashadvance6online.com/data/archive/img/3084974749.png");
+    background-attachment: fixed;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.home .searchBar h1{
+    font-size: 3.5em;
+
+}
+
+.home .searchBar h2{
+    font-size: 1.2em;
+}
+
+.home .searchBar .W{
+    color: #9b59b6;
+    margin: 10px;
+} 
+
+
+.home .searchBar .P{
+    color: #f75b5a;
+    margin: 10px;
+} 
+
 .home .searchBar input{
     all: unset;
+    margin-top: 1em;
     width: 70vw;
     border: 2px solid lightgray;
     border-radius: 15px;
-    padding: 5px;
+    padding: 10px;
     padding-left: 15px; 
+    background-color: white;
     color: gray;
+    font-weight: bold;
 }
 
 .home .searchBar .fa-search{
@@ -31,6 +64,10 @@
 
 .home .resultsInfo{
     margin-top: 2em;
+}
+
+.home .resultsInfo p{
+    text-align: center;
 }
 
 .home .photosResult .photo{

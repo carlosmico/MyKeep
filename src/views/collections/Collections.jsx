@@ -33,8 +33,6 @@ export default class Collections extends React.Component{
             result => {
                 let collectionsElement = [];
 
-                console.log(result.data[0]);
-
                 result.data.forEach(collection => {
                     collectionsElement.push(
                         <Link className="collection" to={`/collection/${collection.id}`}>
@@ -64,8 +62,6 @@ export default class Collections extends React.Component{
         return(
             <div className="collectionsView">
                 <h1 className="title">COLLECTIONS</h1>
-
-                <Navigation url={this.state.collectionsUrl} navAction={this.getCollections}/>
 
                 {
                     this.state.error ? 
