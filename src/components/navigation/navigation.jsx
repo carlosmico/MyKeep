@@ -16,8 +16,8 @@ export default class Navigation extends React.Component{
         this.state = {
             url:props.url,
             action: props.navAction,
-            actualPage: 1,
-            maxPage: 100
+            actualPage: this.props.actualPage || 1,
+            maxPage: props.maxPage || 100
         }
 
         this.first = this.first.bind(this);

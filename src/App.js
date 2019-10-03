@@ -14,6 +14,7 @@ import Presentation from './views/presentation/presentation';
 import Photo from './views/photo/photo';
 import Collections from './views/collections/Collections'
 import Collection from './components/collection/collection'
+import Home from './views/home/home';
 
 function App() {
   return (
@@ -22,7 +23,8 @@ function App() {
         <Header/>
       
         <Switch>
-          <Route path="/" exact component={Presentation}/>
+          <Route path="/" exact component={Home}/>
+          {/* <Route path="/home" exact component={Home}/> */}
           <Route path="/photo/:action" exact component={Photo}/>
           <Route path="/collections" exact component={Collections}/>
           <Route path="/collection/:id" exact component={Collection}/>
