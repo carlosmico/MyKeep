@@ -12,7 +12,7 @@ export default class Home extends React.Component {
     constructor(props) {
         super(props);
 
-        const lastPhotosUrl = `${API.baseUrl}/photos?client_id=${API.key}&per_page=50`;
+        const lastPhotosUrl = `${API.baseUrl}/photos?client_id=${API.key}&per_page=20`;
 
         const navigation = <Navigation url={lastPhotosUrl} navAction={this.searchPhotos} maxPage={100}/>;
 
@@ -89,7 +89,7 @@ export default class Home extends React.Component {
                 <div className="searchBar">
                     <h1><span className="W">W</span><span className="P">P</span><span className="W">W</span></h1>
                     <h2>You just have to write and we find your wallpaper.</h2>
-                    <input type="text" className=" searchBar" placeholder="Discover new photos..." onKeyUp={this.handleChange.bind(this)} />
+                    <input type="text" className=" searchBar" placeholder="Find your new wallpaper..." onKeyUp={this.handleChange.bind(this)} />
                 </div>
 
                 {this.state.search ?
