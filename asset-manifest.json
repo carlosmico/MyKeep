@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/WPW/static/css/main.1bb51a2a.chunk.css",
-    "main.js": "/WPW/static/js/main.2ce22a78.chunk.js",
-    "main.js.map": "/WPW/static/js/main.2ce22a78.chunk.js.map",
+    "main.css": "/WPW/static/css/main.734cf873.chunk.css",
+    "main.js": "/WPW/static/js/main.ee5588a2.chunk.js",
+    "main.js.map": "/WPW/static/js/main.ee5588a2.chunk.js.map",
     "runtime~main.js": "/WPW/static/js/runtime~main.931801d3.js",
     "runtime~main.js.map": "/WPW/static/js/runtime~main.931801d3.js.map",
-    "static/js/2.a9f6476d.chunk.js": "/WPW/static/js/2.a9f6476d.chunk.js",
-    "static/js/2.a9f6476d.chunk.js.map": "/WPW/static/js/2.a9f6476d.chunk.js.map",
+    "static/js/2.6cefb323.chunk.js": "/WPW/static/js/2.6cefb323.chunk.js",
+    "static/js/2.6cefb323.chunk.js.map": "/WPW/static/js/2.6cefb323.chunk.js.map",
     "index.html": "/WPW/index.html",
-    "precache-manifest.de75a72db7c7c9c24d117d4c24ab0bef.js": "/WPW/precache-manifest.de75a72db7c7c9c24d117d4c24ab0bef.js",
+    "precache-manifest.53421d4561b05bc4d0e01a3ed1af5199.js": "/WPW/precache-manifest.53421d4561b05bc4d0e01a3ed1af5199.js",
     "service-worker.js": "/WPW/service-worker.js",
-    "static/css/main.1bb51a2a.chunk.css.map": "/WPW/static/css/main.1bb51a2a.chunk.css.map"
+    "static/css/main.734cf873.chunk.css.map": "/WPW/static/css/main.734cf873.chunk.css.map"
   }
 }
